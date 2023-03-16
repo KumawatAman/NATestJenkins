@@ -42,12 +42,13 @@
     <build>
         <plugins>
             <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-resources-plugin</artifactId>
-                <version>2.3</version>
+                <version>3.2.0</version>
                 <executions>
                     <execution>
-                        <id>copy-resources-step</id>
-                        <phase>prepare-package</phase>
+                    <id>copy-resources</id>
+                        <phase>package</phase>
                         <goals>
                             <goal>copy-resources</goal>
                         </goals>
@@ -66,10 +67,10 @@
             <plugin>
                 <groupId>io.apigee.build-tools.enterprise4g</groupId>
                 <artifactId>apigee-edge-maven-plugin</artifactId>
-                <version>2.3.0</version>
+                <version>1.3.2</version>
                 <executions>
                     <execution>
-                        <id>configure-bundle-step</id>
+                        <id>configure-bundle</id>
                         <phase>package</phase>
                         <goals>
                             <goal>configure</goal>
@@ -83,6 +84,11 @@
                         </goals>
                     </execution>
                 </executions>
+            </plugin>
+
+            <plugin>
+                <artifactId>maven-clean-plugin</artifactId>
+                <version>3.2.0</version>
             </plugin>
             <!-- <plugin>
                 <groupId>com.apigee.edge.config</groupId>
