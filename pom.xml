@@ -38,6 +38,17 @@
                 <apigee.env>${environment}</apigee.env>
             </properties>
         </profile>
+        
+        <profile>
+            <id>prod</id>
+            <properties>
+                <org>kukilbora-eval</org>
+                <apigee.org>kukilbora-eval</apigee.org>
+                <option>update</option>
+                <apigee.profile>prod</apigee.profile>
+                <apigee.env>${environment}</apigee.env>
+            </properties>
+        </profile>
     </profiles>
     <build>
         <plugins>
